@@ -33,8 +33,8 @@ import System.IO.Unsafe
 
 data Event a =
     Event {
-      _evAction :: Codensity STM (Maybe a),
-      _evVar    :: TVar (Maybe (Maybe a))
+      _evAction :: !(Codensity STM (Maybe a)),
+      _evVar    :: !(TVar (Maybe (Maybe a)))
     }
 
 instance Align Event where
